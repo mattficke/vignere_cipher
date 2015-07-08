@@ -76,12 +76,17 @@ var app = {
   "decodeKeyword": document.getElementById("decodeKeyword"),
   "encodeButton": document.getElementById("encodeButton"),
   "decodeButton": document.getElementById("decodeButton"),
+  "encodeForm": document.getElementById("encode"),
+  "decodeForm": document.getElementById("decode"),
   "run": function(){
     this.encodeButton.addEventListener("click", function() {
       var secretMessage = cipher.makeSecret(this.encodeMessage.value, this.encodeKeyword.value);
+      var keyword = this.encodeKeyword.value;
+      this.encodeForm.reset();
       alert("Here's your encoded message: " + secretMessage +
-            "\n\nHere's your keyword: " + this.encodeKeyword.value +
+            "\n\nHere's your keyword: " + keyword +
             "\n\nRemember your keyword, you need it to decode the message.");
+      this.encodeForm.reset();
     }.bind(this));
     this.decodeButton.addEventListener("click", function() {
       var secretMessage = cipher.revealSecret(this.decodeMessage.value, this.decodeKeyword.value);
