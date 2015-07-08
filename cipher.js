@@ -90,6 +90,7 @@ var app = {
     }.bind(this));
     this.decodeButton.addEventListener("click", function() {
       var secretMessage = cipher.revealSecret(this.decodeMessage.value, this.decodeKeyword.value);
+      this.decodeForm.reset();
       alert("Here's your decoded message: " + secretMessage);
     }.bind(this));
   }
