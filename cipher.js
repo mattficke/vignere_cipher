@@ -1,6 +1,5 @@
-//var message = ""
-
 var cipher = {
+  //adding extra character to handle spaces
   "alphabet": "abcdefghijklmnopqrstuvwxyz ",
   "encode": function(message, keyword) {
     var self = this;
