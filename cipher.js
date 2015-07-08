@@ -86,7 +86,6 @@ var app = {
       alert("Here's your encoded message: " + secretMessage +
             "\n\nHere's your keyword: " + keyword +
             "\n\nRemember your keyword, you need it to decode the message.");
-      this.encodeForm.reset();
     }.bind(this));
     this.decodeButton.addEventListener("click", function() {
       var secretMessage = cipher.revealSecret(this.decodeMessage.value, this.decodeKeyword.value);
